@@ -1,0 +1,31 @@
+
+calculate_elasticity <- function(Q1_initial, Q1_final, 
+Q2_initial, Q2_final, P1_initial, P2_initial) {
+
+  percent_change_Q1 <- ((Q1_final - Q1_initial) / Q1_initial) * 100
+  percent_change_Q2 <- ((Q2_final - Q2_initial) / Q2_initial) * 100
+  
+
+  percent_change_P1 <- ((P1_final - P1_initial) / P1_initial) * 100
+  percent_change_P2 <- ((P2_final - P2_initial) / P2_initial) * 100
+  
+
+  elasticity1 <- percent_change_Q1 / percent_change_P1
+  elasticity2 <- percent_change_Q2 / percent_change_P2
+  
+
+  return(list(elasticity1 = elasticity1, elasticity2 = elasticity2))
+}
+
+# example inputs
+Q1_initial <- 1000
+Q1_final <- 1200
+Q2_initial <- 800
+Q2_final <- 750
+P1_initial <- 5
+P2_initial <- 8
+P1_final <- 4
+P2_final <- 7
+
+elasticities <- calculate_elasticity(Q1_initial, Q1_final, Q2_initial, Q2_final, P1_initial, P2_initial)
+elasticities
